@@ -2,6 +2,92 @@
 
 var React = require('react/addons');
 
+var imagePath = 'http://218.244.129.175:8011/images/';
+
+var title = 'Hevaen a time';
+var desc = 'Here he comes Here comes Speed Racer.';
+var imageDatas = [
+	{
+		'filename': imagePath + 'img1.jpg',
+		'title': title,
+		'desc': desc
+	},
+	{
+		'filename': imagePath + 'img2.jpg',
+		'title': title,
+		'desc': desc
+	},
+	{
+		'filename': imagePath + 'img3.jpg',
+		'title': title,
+		'desc': desc
+	},
+	{
+		'filename': imagePath + 'img4.jpg',
+		'title': title,
+		'desc': desc
+	},
+	{
+		'filename': imagePath + 'img5.jpg',
+		'title': title,
+		'desc': desc
+	},
+	{
+		'filename': imagePath + 'img6.jpg',
+		'title': title,
+		'desc': desc
+	},
+	{
+		'filename': imagePath + 'img7.jpg',
+		'title': title,
+		'desc': desc
+	},
+	{
+		'filename': imagePath + 'img8.jpg',
+		'title': title,
+		'desc': desc
+	},
+	{
+		'filename': imagePath + 'img9.jpg',
+		'title': title,
+		'desc': desc
+	},
+	{
+		'filename': imagePath + 'img10.jpg',
+		'title': title,
+		'desc': desc
+	},
+	{
+		'filename': imagePath + 'img11.jpg',
+		'title': title,
+		'desc': desc
+	},
+	{
+		'filename': imagePath + 'img12.jpg',
+		'title': title,
+		'desc': desc
+	},
+	{
+		'filename': imagePath + 'img13.jpg',
+		'title': title,
+		'desc': desc
+	},
+	{
+		'filename': imagePath + 'img14.jpg',
+		'title': title,
+		'desc': desc
+	},
+	{
+		'filename': imagePath + 'img15.jpg',
+		'title': title,
+		'desc': desc
+	},
+	{
+		'filename': imagePath + 'img16.jpg',
+		'title': title,
+		'desc': desc
+	}
+];
 
 // CSS
 require('normalize.css');
@@ -9,15 +95,15 @@ require('../styles/main.scss');
 
 /*var imageURL = require('../images/yeoman.png');*/
 //获取图片相关的数据
-var imageDatas = require('../data/imageDatas.json');
+//var imageDatas = require('../data/imageDatas.json');
 //利用自执行函数，将图片信息转换成图片url信息
-imageDatas = (function genImagesData(imagesDataArr) {
+/*imageDatas = (function genImagesData(imagesDataArr) {
 	for(var i = 0; i < imagesDataArr.length; i++) {
 		var singelImages = imagesDataArr[i];
 		singelImages.getUrlImages = require('../images/' + singelImages.filename);
 	}
 	return imagesDataArr;
-})(imageDatas);
+})(imageDatas);*/
 
 //获取两者之间的随机数
 function getRangeRandom(low, high) {
@@ -62,7 +148,7 @@ var ImgFigure = React.createClass({
 		imgFigure += this.props.arrange.isInverse ? ' is-inverse' : '';
 		return (
 			<figure className={imgFigure} style = {styleObj} onClick = {this.handleClick}>
-				<img src={this.props.data.getUrlImages} alt={this.props.data.title} />
+				<img src={this.props.data.filename} alt={this.props.data.title} />
 				<figcaption>
 					<h2 className="title-figure">{this.props.data.title}</h2>
 					<div className = "img-back" onClick = {this.handleClick}>
